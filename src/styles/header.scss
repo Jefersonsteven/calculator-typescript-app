@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  & .header__logo {
+    font-size: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  & .header__toggleThemes {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 1.2rem;
+    & p {
+      text-transform: uppercase;
+    }
+    & .themes {
+      & .themes__levels {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 6px 6px 6px;
+      }
+      & .themes__toggle {
+        padding: 6px;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        width: 71px;
+        height: 26px;
+        cursor: pointer;
+        & div {
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
