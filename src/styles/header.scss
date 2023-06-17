@@ -10,6 +10,7 @@
   }
   & .header__toggleThemes {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     gap: 25px;
     font-size: 1.2rem;

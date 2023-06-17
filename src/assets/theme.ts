@@ -11,38 +11,42 @@ if (isThemeDark) {
 }
 
 const themesToggle = document.querySelector('.themes__toggle');
+const toggle = document.querySelector('.toggle');
 
 themesToggle?.addEventListener('click', handleToggle);
 
-function handleToggle(event: Event) {
-  const target = event.target as HTMLElement;
-  const theme = Number(target.getAttribute("theme"));
+function handleToggle() {
+  const ThemesToggle = themesToggle as HTMLElement;
+  const theme = ThemesToggle.style.justifyContent;
 
   theme && Number(theme) < 3
-    ? target.setAttribute("theme", `${theme + 1}`)
-    : target.setAttribute("theme", `1`)
-
-  console.log(Number(target.getAttribute("theme")));
-
+    ? ThemesToggle.setAttribute("theme", `${theme + 1}`)
+    : ThemesToggle.setAttribute("theme", `1`)
 
   switch (theme) {
-    case 1:
+    case 'flex-end':
       body?.classList.remove("themePurple")
       body?.classList.add("themeDark")
+      ThemesToggle.style.justifyContent = "flex-start";
       break;
 
-    case 2:
+    case 'flex-start':
       body?.classList.remove("themeDark")
       body?.classList.add("themeLight")
+      ThemesToggle.style.justifyContent = "center";
       break;
 
-    case 3:
-      body?.classList.remove("themeLight")
-      body?.classList.add("themePurple")
+    case 'center':
+      body?.classList.remove("themeLight");
+      body?.classList.add("themePurple");
+      ThemesToggle.style.justifyContent = "flex-end";
       break;
 
     default:
-      body?.classList.remove("themePurple")
-      body?.classList.add("themeDark")
+      console.log('These is bad');
+
   }
 }
+
+// recorrer un array
+
