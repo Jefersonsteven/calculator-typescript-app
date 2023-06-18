@@ -150,5 +150,3 @@ input?.addEventListener('keyup', (event: KeyboardEventInit) => {
 equal?.addEventListener('click', equalResult);
 reset?.addEventListener('click', Reset);
 remove?.addEventListener('click', Remove);
-
-

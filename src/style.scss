@@ -65,6 +65,11 @@ $very-dark-blue: hsl(198, 20%, 13%);
       background-color: $red;
     }
   }
+  & .themes__toggle:hover {
+    & div {
+      background-color: hsl(6, 100%, 65%);
+    }
+  }
   & .main {
     & .main__display {
       & input {
@@ -79,15 +84,24 @@ $very-dark-blue: hsl(198, 20%, 13%);
           color: $very-dark-grayish-blue;
           box-shadow: inset 0px -4px 0px $grayish-orange;
         }
+        & button:active {
+          background-color: $white;
+        }
         & #delete, #reset {
           background-color: $desaturated-dark-blue;
           color: $white;
           box-shadow: inset 0px -4px 0px $desaturated-dark-blue2;
         }
+        & #delete:active, #reset:active {
+          background-color: hsl(225, 26%, 58%);
+        }
         & #equal {
           background-color: $red;
           color: $white;
           box-shadow: inset 0px -4px 0px $dark;
+        }
+        & #equal:active {
+          background-color: hsl(6, 100%, 65%);
         }
     }
   }
@@ -100,6 +114,11 @@ $very-dark-blue: hsl(198, 20%, 13%);
     background-color: $grayish-red;
     & div {
       background-color: $orange;
+    }
+  }
+  & .themes__toggle:hover {
+    & div {
+      background-color: hsl(25, 77%, 54%);
     }
   }
   & .main {
@@ -116,15 +135,24 @@ $very-dark-blue: hsl(198, 20%, 13%);
           color: $very-dark-grayish-yellow;
           box-shadow: inset 0px -4px 0px $dark-grayish-orange;
         }
+        & button:active {
+          background-color: $white;
+        }
         & #delete, #reset {
           background-color: $dark-moderate-cyan;
           color: $white;
           box-shadow: inset 0px -4px 0px $very-dark-cyan;
         }
+        & #delete:active, #reset:active {
+          background-color: hsl(185, 44%, 51%);
+        }
         & #equal {
           background-color: $orange;
           color: $white;
           box-shadow: inset 0px -4px 0px $dark-orange;
+        }
+        & #equal:active {
+          background-color: hsl(25, 77%, 54%);
         }
     }
   }
@@ -137,6 +165,11 @@ $very-dark-blue: hsl(198, 20%, 13%);
     background-color: $very-dark-violet2;
     & div {
       background-color: $pure-cyan;
+    }
+  }
+  & .themes__toggle:hover {
+    & div {
+      background-color: $soft-cyan;
     }
   }
   & .main {
@@ -153,14 +186,23 @@ $very-dark-blue: hsl(198, 20%, 13%);
           color: $light-yellow;
           box-shadow: inset 0px -4px 0px $vivid-magenta;
         }
+        & button:active {
+          background-color: $dark-violet;
+        }
         & #delete, #reset {
           background-color: $dark-violet;
           color: $white;
+        }
+        & #delete:active, #reset:active {
+          background-color: $dark-magenta;
         }
         & #equal {
           background-color: $pure-cyan;
           color: $very-dark-blue;
           box-shadow: inset 0px -4px 0px $soft-cyan;
+        }
+        & #equal:active {
+          background-color: $soft-cyan;
         }
     }
   }
@@ -196,5 +238,8 @@ input, button {
   body {
     justify-content: center;
     align-items: center;
+  }
+  button {
+    cursor: pointer;
   }
 }
