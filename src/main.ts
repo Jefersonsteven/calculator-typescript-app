@@ -32,8 +32,9 @@ function calculatorClick(event: Event) {
     && result.length === 0
   ) return
 
-  if (["+", "-", "/", "*", "."].includes(result[result.length - 1])
-    && ["+", "-", "/", "*", "."].includes(keyValue)) {
+  if ((["+", "-", "/", "*", "."].includes(result[result.length - 1])
+    && ["+", "-", "/", "*", "."].includes(keyValue)) ||
+    (["+", "-", "/", "*"].includes(displayValue[displayValue.length - 2]) && displayValue[displayValue.length - 1] === "0") && keyValue !== ".") {
     const operator = keyValue;
 
     result = deleteChar(result);
@@ -46,38 +47,40 @@ function calculatorClick(event: Event) {
   const validate = /^[0-9+\-*/. ]+$/;
   if (validate.test(keyValue)) {
     if (displayValue.length === 1 && displayValue === "0" && keyValue !== '.') {
-
       display.value = keyValue;
       result = keyValue
       return
     }
+
     display.value = displayValue + keyValue;
-    result = result + keyValue
+    result = result + keyValue;
   }
 }
 
 // * calculator keyboard
 function calculatorInput(event: Event) {
   const target = event.target as HTMLInputElement;
+  const validate = /^[0-9+\-*/. ]+$/;
   if (["+", "-", "/", "*", "."].includes(target.value) && result.length === 0) return target.value = ""
 
-  if (["+", "-", "/", "*", "."].includes(target.value[target.value.length - 1])
-    && ["+", "-", "/", "*", "."].includes(target.value[target.value.length - 2])) {
+  if ((["+", "-", "/", "*", "."].includes(target.value[target.value.length - 1])
+    && ["+", "-", "/", "*", "."].includes(target.value[target.value.length - 2]))
+    || (["+", "-", "/", "*"].includes(target.value[target.value.length - 3]) && target.value[target.value.length - 2] === "0") && target.value[target.value.length - 1] !== ".") {
     const operator = target.value[target.value.length - 1];
 
-    result = deleteChar(result);
-    target.value = deleteChar(target.value);
-    result = deleteChar(result);
-    target.value = deleteChar(target.value);
-    result = result + operator;
-    target.value = target.value + operator;
+    if (validate.test(target.value)) {
+      result = deleteChar(result);
+      target.value = deleteChar(target.value);
+      result = deleteChar(result);
+      target.value = deleteChar(target.value);
+      result = result + operator;
+      target.value = target.value + operator;
+      return
+    }
   }
 
-  const validate = /^[0-9+\-*/. ]+$/;
   if (validate.test(target.value)) {
     if (target.value.length === 2 && target.value[target.value.length - 2] === '0' && target.value[target.value.length - 1] !== '.') {
-      console.log('x');
-
       target.value = target.value[target.value.length - 1];
       result = target.value[target.value.length - 1]
       return
