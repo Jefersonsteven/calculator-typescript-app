@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
 @import url('./styles/header.scss');
+@import url('./styles/main.scss');
 
 // ?---------- DARK Theme -----
 // * backgrounds
@@ -75,6 +76,10 @@ body {
   font-size: 1.6rem;
   padding: 30px;
   padding-top: 40px;
+}
+
+input, button {
+  font-family: $font;
 }
 
 .themeDark {

@@ -134,6 +134,12 @@ if (keysLength) {
 }
 
 input?.addEventListener('input', calculatorInput);
+input?.addEventListener('keyup', (event: KeyboardEventInit) => {
+  const keyCode: string = event.code as string;
+  if (keyCode === "Enter") {
+    equalResult()
+  }
+})
 equal?.addEventListener('click', equalResult);
 reset?.addEventListener('click', Reset);
 remove?.addEventListener('click', Remove);
