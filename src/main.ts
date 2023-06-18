@@ -9,10 +9,11 @@ const equal = document.querySelector('#equal');
 const remove = document.querySelector('#delete');
 const reset = document.querySelector('#reset');
 
-// * Calculator
+// * Calculator * //
 
 let result: string = '';
 
+// * delete end character
 function deleteChar(char: string) {
   const temp = char.split("");
   temp.pop()
@@ -89,6 +90,7 @@ function calculatorInput(event: Event) {
   }
 }
 
+// * equal function
 function equalResult() {
   if (result !== '') {
     const INPUT = input as HTMLInputElement;
@@ -106,6 +108,7 @@ function equalResult() {
   }
 }
 
+// * reset function
 function Reset() {
   if (result !== '') {
     result = "";
@@ -114,6 +117,7 @@ function Reset() {
   }
 }
 
+// * delete function
 function Remove() {
   if (result !== '') {
     const INPUT = input as HTMLInputElement;

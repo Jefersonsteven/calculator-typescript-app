@@ -49,12 +49,122 @@ $dark-violet: hsl(281, 89%, 26%);
 $vivid-magenta: hsl(285, 91%, 52%);
 $pure-cyan: hsl(176, 100%, 44%);
 $soft-cyan: hsl(177, 92%, 70%);
-$very-dark-violet: hsl(268, 47%, 21%);
+$very-dark-violet3: hsl(268, 47%, 21%);
 $dark-magenta: hsl(290, 70%, 36%);
 
 // * text
 $light-yellow: hsl(52, 100%, 62%);
 $very-dark-blue: hsl(198, 20%, 13%);
+
+.themeDark {
+  background-color: $very-dark-desaturated;
+  color: $white;
+  & .themes__toggle {
+    background-color: $very-dark-desaturated2;
+    & div {
+      background-color: $red;
+    }
+  }
+  & .main {
+    & .main__display {
+      & input {
+        background-color: $very-dark-desaturated3;
+        color: $white;
+      }
+    }
+    & .main__keyboard {
+        background-color: $very-dark-desaturated2;
+        & button {
+          background-color: $light-grayish-orange;
+          color: $very-dark-grayish-blue;
+          box-shadow: inset 0px -4px 0px $grayish-orange;
+        }
+        & #delete, #reset {
+          background-color: $desaturated-dark-blue;
+          color: $white;
+          box-shadow: inset 0px -4px 0px $desaturated-dark-blue2;
+        }
+        & #equal {
+          background-color: $red;
+          color: $white;
+          box-shadow: inset 0px -4px 0px $dark;
+        }
+    }
+  }
+}
+
+.themeLight {
+  background-color: $light-gray;
+  color: $very-dark-grayish-yellow;
+  & .themes__toggle {
+    background-color: $grayish-red;
+    & div {
+      background-color: $orange;
+    }
+  }
+  & .main {
+    & .main__display {
+      & input {
+        background-color: $very-light-gray;
+        color: $very-dark-grayish-yellow;
+      }
+    }
+    & .main__keyboard {
+        background-color: $grayish-red;
+        & button {
+          background-color: $light-grayish-yellow;
+          color: $very-dark-grayish-yellow;
+          box-shadow: inset 0px -4px 0px $dark-grayish-orange;
+        }
+        & #delete, #reset {
+          background-color: $dark-moderate-cyan;
+          color: $white;
+          box-shadow: inset 0px -4px 0px $very-dark-cyan;
+        }
+        & #equal {
+          background-color: $orange;
+          color: $white;
+          box-shadow: inset 0px -4px 0px $dark-orange;
+        }
+    }
+  }
+}
+
+.themePurple {
+  background-color: $very-dark-violet;
+  color: $light-yellow;
+  & .themes__toggle {
+    background-color: $very-dark-violet2;
+    & div {
+      background-color: $pure-cyan;
+    }
+  }
+  & .main {
+    & .main__display {
+      & input {
+        background-color: $very-dark-violet2;
+        color: $light-yellow;
+      }
+    }
+    & .main__keyboard {
+        background-color: $very-dark-violet2;
+        & button {
+          background-color: $very-dark-violet3;
+          color: $light-yellow;
+          box-shadow: inset 0px -4px 0px $vivid-magenta;
+        }
+        & #delete, #reset {
+          background-color: $dark-violet;
+          color: $white;
+        }
+        & #equal {
+          background-color: $pure-cyan;
+          color: $very-dark-blue;
+          box-shadow: inset 0px -4px 0px $soft-cyan;
+        }
+    }
+  }
+}
 
 * {
   margin: 0;
@@ -74,7 +184,7 @@ body {
   min-height: 100vh;
   font-family: $font;
   font-size: 1.6rem;
-  padding: 30px;
+  padding: 20px;
   padding-top: 40px;
 }
 
@@ -82,36 +192,9 @@ input, button {
   font-family: $font;
 }
 
-.themeDark {
-  background-color: $very-dark-desaturated;
-  color: $white;
-  & .themes__toggle {
-    background-color: $very-dark-desaturated2;
-    & div {
-      background-color: $red;
-    }
+@media(width >= 550px) {
+  body {
+    justify-content: center;
+    align-items: center;
   }
 }
-
-.themeLight {
-  background-color: $light-gray;
-  color: $very-dark-grayish-yellow;
-  & .themes__toggle {
-    background-color: $grayish-red;
-    & div {
-      background-color: $orange;
-    }
-  }
-}
-
-.themePurple {
-  background-color: $very-dark-violet;
-  color: $light-yellow;
-  & .themes__toggle {
-    background-color: $very-dark-violet2;
-    & div {
-      background-color: $pure-cyan;
-    }
-  }
-}
-

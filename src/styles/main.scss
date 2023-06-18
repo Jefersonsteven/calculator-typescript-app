@@ -2,6 +2,7 @@
   display: flex;
   gap: 20px;
   flex-direction: column;
+  max-width: 540px;
   & .main__display {
     width: 100%;
     & input {
@@ -13,6 +14,7 @@
       max-height: 88px;
       font-weight: bold;
       border-radius: 10px;
+      border: none;
     }
     & input:focus-visible {
       outline-width: 0px;
@@ -23,10 +25,14 @@
     padding: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
     gap: 13px;
     & button {
-      width: 60px;
-      height: 64px;
+      width: 100%;
+      height: 100%;
+      max-width: 101px;
+      min-width: 60px;
+      min-height: 64px;
       border: none;
       border-radius: 5px;
       font-weight: bold;
@@ -36,13 +42,24 @@
       font-size: 2rem;
     }
     & #reset, #equal {
-      width: 133px;
+      min-width: 133px;
+      max-width: 227px;
     }
     & #reset {
       grid-column: 1 / 3;
     }
     & #equal {
       grid-column: 3 / 5;
+    }
+  }
+}
+
+@media (width >= 550px) {
+  .main__display {
+    & #input {
+      padding: 20px;
+      font-size: 5.6rem;
+      min-height: 128px;
     }
   }
 }
